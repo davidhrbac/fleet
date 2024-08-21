@@ -1,0 +1,10 @@
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: kured
+spec:
+  template:
+    spec:
+      containers:
+        - args:
+            - '--reboot-sentinel-command=sh -c "! needs-restarting --reboothint"'
