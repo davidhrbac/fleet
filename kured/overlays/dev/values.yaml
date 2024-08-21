@@ -1,0 +1,3 @@
+configuration:
+  rebootSentinelCommand: "! needs-restarting --reboothint"     # command for which a successful run signals need to reboot (default ""). If non-empty, sentinel file will be ignored.
+

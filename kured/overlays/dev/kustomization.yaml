@@ -1,2 +1,2 @@
 patchesStrategicMerge:
-- kured-rocky-linux.yaml
+- values.yaml
