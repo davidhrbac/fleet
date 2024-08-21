@@ -6,5 +6,6 @@ spec:
   template:
     spec:
       containers:
-        - args:
+        - name: kured
+          args:
             - '--reboot-sentinel-command=sh -c "! needs-restarting --reboothint"'
