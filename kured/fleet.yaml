@@ -4,8 +4,9 @@ helm:
   chart: kured
   repo: https://kubereboot.github.io/charts
   values:
-    rebootSentinelCommand: "! needs-restarting --reboothint"
-    useRebootSentinelHostPath: false
+    configuration:
+      rebootSentinelCommand: "! needs-restarting --reboothint"
+      useRebootSentinelHostPath: false
   #version: 100.1.2+up19.0.3
   #kustomize:
   #  dir: overlays/dev
