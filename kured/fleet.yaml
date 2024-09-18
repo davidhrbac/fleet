@@ -8,9 +8,3 @@ helm:
       rebootSentinelCommand: sh -c "! needs-restarting --reboothint"
       useRebootSentinelHostPath: false
       annotateNodes: true
-  #version: 100.1.2+up19.0.3
-  #kustomize:
-  #  dir: overlays/dev
-    #    valuesInline:
-    #      configuration:
-    #        rebootSentinelCommand: "! needs-restarting --reboothint"     # command for which a successful run signals need to reboot (default ""). If non-empty, sentinel file will be ignored.
