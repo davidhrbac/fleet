@@ -1,0 +1,13 @@
+defaultNamespace: cattle-monitoring-system
+name: rancher-monitoring
+dependsOn:
+  - rancher-monitoring-crd
+helm:
+  releaseName: rancher-monitoring
+  chart: rancher-monitoring
+  repo: https://charts.rancher.io
+  values:
+    prometheus:
+      prometheusSpec:
+        serviceMonitorSelectorNilUsesHelmValues: false
+
