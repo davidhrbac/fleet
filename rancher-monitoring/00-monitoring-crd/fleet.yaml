@@ -1,5 +1,5 @@
 defaultNamespace: cattle-monitoring-system
-name: rancher-monitoring-crd
+#name: rancher-monitoring-crd
 helm:
   releaseName: rancher-monitoring-crd
   chart: rancher-monitoring-crd
