@@ -1,0 +1,10 @@
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: helloworld-link
+spec:
+  label: "HelloWorld App"
+  description: "Simple Hello World Service"
+  toURL: "/k8s/clusters/local/api/v1/namespaces/default/services/http:helloworld-service:80/proxy/"
+  group: "Demo Apps"
+
