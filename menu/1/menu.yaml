@@ -1,10 +1,10 @@
 apiVersion: ui.cattle.io/v1
 kind: NavLink
 metadata:
-  name: longhorn-link
+  name: spacestep-link
 spec:
-  label: "Longhorn UI"
-  description: "Správa diskového úložiště"
+  label: "Spacestep UI"
+  description: "OS pathing state"
   toURL: "/k8s/clusters/local/api/v1/namespaces/longhorn-system/services/http:longhorn-frontend:80/proxy/"
-  group: "Storage"
+  group: "Spacestep"
   target: "_blank"
