@@ -1,0 +1,11 @@
+# navlink.yaml
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: hello-world-link
+spec:
+  label: "Hello World"
+  description: "Simple Hello World App in Rancher"
+  toURL: "/dashboard/c/c-m-78zzq4bw/hello-world/"
+  group: "Custom Apps"
+
