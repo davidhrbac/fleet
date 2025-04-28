@@ -5,6 +5,6 @@ metadata:
 spec:
   label: "HelloWorld App"
   description: "Simple Hello World Service"
-  toURL: "/k8s/clusters/c0m-78zzq4bw/api/v1/namespaces/default/services/http:helloworld-service:80/proxy/"
+  toURL: "/k8s/clusters/c-m-78zzq4bw/api/v1/namespaces/default/services/http:helloworld-service:80/proxy/"
   group: "Demo Apps"
 
