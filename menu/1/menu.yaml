@@ -1,0 +1,10 @@
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: longhorn-link
+spec:
+  label: "Longhorn UI"
+  description: "Správa diskového úložiště"
+  toURL: "/k8s/clusters/local/api/v1/namespaces/longhorn-system/services/http:longhorn-frontend:80/proxy/"
+  group: "Storage"
+  target: "_blank"
