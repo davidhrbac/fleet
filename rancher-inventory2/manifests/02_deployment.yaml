@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: watcher
+          env:
             - name: RANCHER_TOKEN
               valueFrom:
                 secretKeyRef:
