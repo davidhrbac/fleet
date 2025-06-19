@@ -1,4 +1,4 @@
 defaultNamespace: cattle-global-data
 helm:
   releaseName: readonly-role
-kustomize: false
+  #kustomize: false
