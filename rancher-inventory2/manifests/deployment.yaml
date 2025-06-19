@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rancher-inventory-client
+  namespace: rancher-inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rancher-inventory
+  template:
+    metadata:
+      labels:
+        app: rancher-inventory
+    spec:
+      containers:
+        - name: watcher
+            - name: RANCHER_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: token
+                  name: rancher-api-token
+            - name: TARGET_URL
+              value: https://webhook.site/2b272be4-3952-4287-8175-f05202eef7a6
+            - name: POLL_INTERVAL
+              value: '60'
+            - name: PYTHONUNBUFFERED
+              value: '1'
+          image: registry.gitlab.com/davidhrbac/rancher-inventory/client:0.7
+          resources:
+            limits:
+              memory: "100Mi"
+              cpu: "100m"
+      restartPolicy: Always
+
