@@ -1,0 +1,20 @@
+apiVersion: management.cattle.io/v3
+kind: GlobalRole
+metadata:
+  name: readonly-rancher-inventory
+  annotations:
+    fleet.cattle.io/skip-namespace-scoping: "true"
+displayName: ReadOnly for rancher-inventory
+rules:
+  - apiGroups:
+      - management.cattle.io
+    resources:
+      - clusters
+    verbs:
+      - get
+  - apiGroups:
+      - management.cattle.io
+    resources:
+      - settings
+    verbs:
+      - get
