@@ -22,7 +22,7 @@ spec:
                   key: token
                   name: rancher-api-token
             - name: TARGET_URL
-              value: https://webhook.site/ef9fb9ab-f11d-4e48-9d1e-e4c331e802e1
+              value: https://webhook.site/3c6d0298-318d-4f82-a044-c36077400516
             - name: POLL_INTERVAL
               value: '60'
             - name: PYTHONUNBUFFERED
