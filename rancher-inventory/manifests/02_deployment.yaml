@@ -22,12 +22,12 @@ spec:
                   key: token
                   name: rancher-api-token
             - name: TARGET_URL
-              value: https://webhook.site/3c6d0298-318d-4f82-a044-c36077400516
+              value: https://farmhouse.apps.openshift-swe.service.tieto.com/inventory
             - name: POLL_INTERVAL
               value: '60'
             - name: PYTHONUNBUFFERED
               value: '1'
-          image: registry.gitlab.com/davidhrbac/rancher-inventory/client:0.18
+          image: registry.gitlab.com/davidhrbac/rancher-inventory/client:0.20
           resources:
             limits:
               memory: "100Mi"
