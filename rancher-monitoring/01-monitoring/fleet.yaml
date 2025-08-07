@@ -13,7 +13,7 @@ helm:
           searchNamespace: ALL
     global:
       cattle:
-        clusterId: "{{ .ClusterLabels.clusterId }}"
+        clusterId: "{{ default \"unknown\" .ClusterLabels.clusterId }}"
         clusterName: "{{ .ClusterLabels.clusterName }}"
     rke2ControllerManager:
       enabled: true
