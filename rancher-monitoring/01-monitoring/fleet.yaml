@@ -15,6 +15,7 @@ helm:
       cattle:
         clusterId: "${ get .ClusterLabels \"clusterId\" }"
         clusterName: "${ get .ClusterLabels \"clusterName\" }"
+        url: https://rancher-dbops.int.tietoevry.com
     rke2ControllerManager:
       enabled: true
     rke2Etcd:
