@@ -7,7 +7,7 @@ helm:
   values:
     global:
       cattle:
-        clusterId: "{{ .ClusterName }}"
+        clusterId: "{{ .ClusterLabels.clusterId }}"
     prometheus:
       prometheusSpec:
         serviceMonitorSelectorNilUsesHelmValues: false
