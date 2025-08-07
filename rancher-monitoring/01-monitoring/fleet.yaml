@@ -9,7 +9,7 @@ helm:
         serviceMonitorSelector:
           matchLabels:
             release: rancher-monitoring
-        serviceMonitorSelectorNilUsesHelmValues: false
+        serviceMonitorSelectorNilUsesHelmValues: true
     global:
       cattle:
         clusterId: c-m-78zzq4bw
