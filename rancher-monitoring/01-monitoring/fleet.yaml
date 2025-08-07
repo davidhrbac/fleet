@@ -15,3 +15,12 @@ helm:
         clusterId: c-m-78zzq4bw
         clusterName: test
         url: https://rancher-dbops.int.tietoevry.com
+    prometheus-rancher-monitoring:
+      rkeControllerManager:
+        enabled: true
+      rkeEtcd:
+        enabled: true
+      rkeProxy:
+        enabled: true
+      rkeScheduler:
+        enabled: true
