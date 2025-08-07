@@ -6,7 +6,4 @@ helm:
   values:
     prometheus:
       prometheusSpec:
-        serviceMonitorSelector:
-          matchLabels:
-            release: rancher-monitoring
-        serviceMonitorSelectorNilUsesHelmValues: false
+        serviceMonitorSelectorNilUsesHelmValues: true
