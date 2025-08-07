@@ -11,6 +11,11 @@ helm:
       sidecar:
         dashboards:
           searchNamespace: ALL
+    global:
+      cattle:
+        clusterId: c-m-78zzq4bw
+        clusterName: test
+        url: https://rancher-dbops.int.tietoevry.com
     prometheus:
       rke2ControllerManager:
         enabled: true
