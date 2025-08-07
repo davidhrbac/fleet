@@ -5,6 +5,9 @@ helm:
   chart: rancher-monitoring
   repo: https://charts.rancher.io
   values:
+    global:
+      cattle:
+        clusterId: "{{ .ClusterName }}"
     prometheus:
       prometheusSpec:
         serviceMonitorSelectorNilUsesHelmValues: false
