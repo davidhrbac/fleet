@@ -1,14 +1,12 @@
 defaultNamespace: cattle-monitoring-system
-#name: rancher-monitoring
 helm:
   releaseName: rancher-monitoring
   chart: rancher-monitoring
   repo: https://charts.rancher.io
   values:
-    global:
-      cattle:
-        clusterId: "{{ .ClusterLabels.clusterId }}"
     prometheus:
       prometheusSpec:
+        serviceMonitorSelector:
+          matchLabels:
+            release: rancher-monitoring
         serviceMonitorSelectorNilUsesHelmValues: false
-
