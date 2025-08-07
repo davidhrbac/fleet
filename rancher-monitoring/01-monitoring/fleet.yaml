@@ -18,8 +18,3 @@ helm:
           matchLabels:
             release: rancher-monitoring
         serviceMonitorSelectorNilUsesHelmValues: true
-    global:
-      cattle:
-        clusterId: c-m-78zzq4bw
-        clusterName: test
-        url: https://rancher-dbops.int.tietoevry.com
