@@ -13,8 +13,8 @@ helm:
           searchNamespace: ALL
     global:
       cattle:
-        clusterId: "${ .ClusterLabels.clusterId }"
-        clusterName: "${ .ClusterLabels.clusterName }"
+        clusterId: "{{ .ClusterLabels.clusterId }}"
+        clusterName: "{{ .ClusterLabels.clusterName }}"
     rke2ControllerManager:
       enabled: true
     rke2Etcd:
