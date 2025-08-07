@@ -16,17 +16,17 @@ helm:
         clusterId: c-m-78zzq4bw
         clusterName: test
         url: https://rancher-dbops.int.tietoevry.com
+    rke2ControllerManager:
+      enabled: true
+    rke2Etcd:
+      enabled: true
+    rke2Proxy:
+      enabled: true
+    rke2Scheduler:
+      enabled: true
+    rke2IngressNginx:
+      enabled: true
     prometheus:
-      rke2ControllerManager:
-        enabled: true
-      rke2Etcd:
-        enabled: true
-      rke2Proxy:
-        enabled: true
-      rke2Scheduler:
-        enabled: true
-      rke2IngressNginx:
-        enabled: true
       prometheusSpec:
         serviceMonitorSelector:
           matchLabels:
