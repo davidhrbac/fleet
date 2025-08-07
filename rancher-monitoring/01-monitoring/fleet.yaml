@@ -5,13 +5,15 @@ helm:
   repo: https://charts.rancher.io
   values:
     prometheus:
-      rkeControllerManager:
+      rke2ControllerManager:
         enabled: true
-      rkeEtcd:
+      rke2Etcd:
         enabled: true
-      rkeProxy:
+      rke2Proxy:
         enabled: true
-      rkeScheduler:
+      rke2Scheduler:
+        enabled: true
+      rke2IngressNginx:
         enabled: true
       prometheusSpec:
         serviceMonitorSelector:
