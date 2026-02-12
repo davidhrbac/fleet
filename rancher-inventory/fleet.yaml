@@ -2,3 +2,11 @@ defaultNamespace: cattle-global-data
 helm:
   releaseName: readonly-role
   #kustomize: false
+targetCustomizations:
+  - name: inventory-proxy
+    clusterSelector:
+      matchLabels:
+        use-inventory-proxy: "true"
+    yaml:
+      overlays:
+        - inventory-proxy
