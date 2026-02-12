@@ -40,5 +40,5 @@ stringData:
 ### Notes
 
 - The Fleet patch injects `envFrom` pointing to `inventory-proxy-env` only for
-  labeled clusters.
+  labeled clusters via the `inventory-proxy` overlay.
 - Clusters without the label do not require the Secret.
