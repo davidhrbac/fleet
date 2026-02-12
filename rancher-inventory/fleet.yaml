@@ -2,3 +2,25 @@ defaultNamespace: cattle-global-data
 helm:
   releaseName: readonly-role
   #kustomize: false
+targetCustomizations:
+  - name: inventory-proxy
+    clusterSelector:
+      matchLabels:
+        use-inventory-proxy: "true"
+    yaml:
+      overlays:
+        - name: proxy-env
+          patches:
+            - apiVersion: apps/v1
+              kind: Deployment
+              metadata:
+                name: rancher-inventory-client
+                namespace: rancher-inventory
+              spec:
+                template:
+                  spec:
+                    containers:
+                      - name: watcher
+                        envFrom:
+                          - secretRef:
+                              name: inventory-proxy-env
