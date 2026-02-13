@@ -5,7 +5,8 @@ helm:
   chart: rancher-monitoring
   repo: https://charts.rancher.io
   values:
+    global:
+      disableProxyIPv6: true
     prometheus:
       prometheusSpec:
         serviceMonitorSelectorNilUsesHelmValues: false
-
