@@ -1,11 +1,34 @@
 defaultNamespace: cattle-monitoring-system
-#name: rancher-monitoring
 helm:
   releaseName: rancher-monitoring
   chart: rancher-monitoring
   repo: https://charts.rancher.io
   values:
+    grafana:
+      grafana.ini:
+        auth.anonymous:
+          org_role: Admin
+      sidecar:
+        dashboards:
+          searchNamespace: ALL
+    global:
+      cattle:
+        clusterId: "${ get .ClusterLabels \"clusterId\" }"
+        clusterName: "${ get .ClusterLabels \"clusterName\" }"
+        url: https://rancher-dbops.int.tietoevry.com
+    rke2ControllerManager:
+      enabled: true
+    rke2Etcd:
+      enabled: true
+    rke2Proxy:
+      enabled: true
+    rke2Scheduler:
+      enabled: true
+    rke2IngressNginx:
+      enabled: true
     prometheus:
       prometheusSpec:
-        serviceMonitorSelectorNilUsesHelmValues: false
-
+        serviceMonitorSelector:
+          matchLabels:
+            release: rancher-monitoring
+        serviceMonitorSelectorNilUsesHelmValues: true
