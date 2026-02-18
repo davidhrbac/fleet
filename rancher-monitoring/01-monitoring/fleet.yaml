@@ -16,6 +16,7 @@ helm:
         clusterId: "${ get .ClusterLabels \"clusterId\" }"
         clusterName: "${ get .ClusterLabels \"clusterName\" }"
         url: https://rancher-dbops.int.tietoevry.com
+      disableProxyIPv6: true
     rke2ControllerManager:
       enabled: true
     rke2Etcd:
