@@ -1,0 +1,5 @@
+defaultNamespace: cattle-monitoring-system
+targets:
+  - clusterSelector:
+      matchLabels:
+        loki-enable: "1"

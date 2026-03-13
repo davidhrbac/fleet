@@ -33,11 +33,3 @@ helm:
           matchLabels:
             release: rancher-monitoring
         serviceMonitorSelectorNilUsesHelmValues: true
-targetCustomizations:
-  - name: loki-datasource
-    clusterSelector:
-      matchLabels:
-        loki-enable: 1
-    yaml:
-      overlays:
-        - loki-datasource
