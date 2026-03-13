@@ -37,7 +37,7 @@ targetCustomizations:
   - name: loki-datasource
     clusterSelector:
       matchLabels:
-        loki-enable: "true"
+        loki-enable: 1
     yaml:
       overlays:
         - loki-datasource
