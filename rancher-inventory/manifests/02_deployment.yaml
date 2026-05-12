@@ -27,10 +27,9 @@ spec:
               value: '60'
             - name: PYTHONUNBUFFERED
               value: '1'
-          image: registry.gitlab.com/davidhrbac/rancher-inventory/client:0.87
+          image: registry.gitlab.com/davidhrbac/rancher-inventory/client:0.88
           resources:
             limits:
               memory: "100Mi"
               cpu: "100m"
       restartPolicy: Always
-
