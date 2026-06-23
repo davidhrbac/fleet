@@ -1,8 +1,14 @@
 defaultNamespace: cattle-monitoring-system
+dependsOn:
+  - selector:
+      matchLabels:
+        app: rancher-monitoring-crd
 helm:
   releaseName: rancher-monitoring
   chart: rancher-monitoring
   repo: https://charts.rancher.io
+  waitForJobs: true
+  timeoutSeconds: 600
   values:
     grafana:
       grafana.ini:
