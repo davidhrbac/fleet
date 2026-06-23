@@ -22,6 +22,8 @@ helm:
         clusterName: "${ get .ClusterLabels \"clusterName\" }"
         url: https://rancher-dbops.int.tietoevry.com
       disableProxyIPv6: true
+    # Rancher Monitoring 109.0.2 on Rancher 2.14.1 renders this rule group
+    # with rules: null, which makes Helm upgrades fail on PrometheusRule validation.
     defaultRules:
       rules:
         kubeControllerManager: false
