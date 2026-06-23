@@ -22,6 +22,9 @@ helm:
         clusterName: "${ get .ClusterLabels \"clusterName\" }"
         url: https://rancher-dbops.int.tietoevry.com
       disableProxyIPv6: true
+    defaultRules:
+      rules:
+        kubeControllerManager: false
     rke2ControllerManager:
       enabled: true
     rke2Etcd:
