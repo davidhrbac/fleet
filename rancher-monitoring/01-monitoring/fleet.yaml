@@ -34,26 +34,17 @@ helm:
             release: rancher-monitoring
         serviceMonitorSelectorNilUsesHelmValues: true
 diff:
-  ignore:
+  comparePatches:
     - apiVersion: admissionregistration.k8s.io/v1
       kind: MutatingWebhookConfiguration
       name: rancher-monitoring-admission
+      operations:
+        - op: remove
+          path: /webhooks
+
     - apiVersion: admissionregistration.k8s.io/v1
       kind: ValidatingWebhookConfiguration
       name: rancher-monitoring-admission
-
-        #diff:
-        #  comparePatches:
-        #    - apiVersion: admissionregistration.k8s.io/v1
-        #      kind: MutatingWebhookConfiguration
-        #      name: rancher-monitoring-admission
-        #      operations:
-        #        - op: remove
-        #          path: /webhooks
-        #
-        #    - apiVersion: admissionregistration.k8s.io/v1
-        #      kind: ValidatingWebhookConfiguration
-        #      name: rancher-monitoring-admission
-        #      operations:
-        #        - op: remove
-        #          path: /webhooks
+      operations:
+        - op: remove
+          path: /webhooks
