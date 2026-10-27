@@ -8,6 +8,13 @@ helm:
       rebootSentinelCommand: sh -c "! needs-restarting --reboothint"
       useRebootSentinelHostPath: false
       annotateNodes: true
+      rebootDays:
+        - mo
+        - tu
+        - we
+        - th
+        - fr
+      timeZone: Europe/Prague
     tolerations:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
