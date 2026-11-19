@@ -43,6 +43,35 @@ helm:
           matchLabels:
             release: rancher-monitoring
         serviceMonitorSelectorNilUsesHelmValues: true
+targetCustomizations:
+  - name: grafana-large
+    clusterSelector:
+      matchLabels:
+        monitoring-profile: large
+    helm:
+      values:
+        grafana:
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+  - name: grafana-xlarge
+    clusterSelector:
+      matchLabels:
+        monitoring-profile: xlarge
+    helm:
+      values:
+        grafana:
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1Gi
+            limits:
+              cpu: "2"
+              memory: 2Gi
 diff:
   comparePatches:
     - apiVersion: admissionregistration.k8s.io/v1
